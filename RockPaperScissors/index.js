@@ -9,9 +9,8 @@ let compScore = document.querySelector("#compScore")
 
 let comChoice = () =>{
   let options = ['rock', 'paper', 'scissor'];
-  let randNum = Math.floor(Math.random() * 3); // 0 or 1 or 2
- 
-  return options[randNum]; // rock or paper or scissor
+  let randomNum = Math.floor(Math.random() * 3); // 0 or 1 or 2
+  return options[randomNum]; // rock or paper or scissor
 }  
 
 const drawGame = () => {
@@ -48,14 +47,17 @@ const playGame = (userChoice) => {
    }
    else {
        let userWin = true;
-        if(userChoice === 'rock'){
+       if (userChoice === 'rock') {
+            //[paper,scissor]
             userWin = compChoice === 'paper' ? false : true;
             console.log(userWin);
         }
-        else if(userChoice === 'paper'){
+       else if (userChoice === 'paper') {
+            // [rock,scissor]
             userWin = compChoice === 'scissor' ? false : true;
             console.log(userWin);
-        }else{
+       } else {
+            // [rock,paper]
             userWin = compChoice === 'rock' ? false : true;
             console.log(userWin);
         }
